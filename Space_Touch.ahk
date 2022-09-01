@@ -1,7 +1,6 @@
-Hotkey, IfWinActive, ahk_exe pycharm64.exe ; pycharm64.exe, Code.exe, devenv.exe
-    ; A utility that improves programming speed.
-space & [::Send, {Esc}
+#SingleInstance Force
 
+#IfWinActive, ahk_exe pycharm64.exe ; pycharm64.exe, Code.exe, devenv.exe  
 ; Movement hotkeys
 space & l::send, {Right}
 space & i::send, {up}
@@ -15,9 +14,11 @@ space & n::send, {PgDn}
 space & y::send, {Insert}
 space & p::send, {backspace}
 space & m::send, {Delete}
-; Special hotkeys
+; Special hotkeys x
+space & [::Send, {Esc}
 space & b::send, +{F10} ; Build in Pycharm
-Hotkey, IfWinActive
+
+#IfWinActive
     space & x::ExitApp, [0]
 space::
     Send, {space}
